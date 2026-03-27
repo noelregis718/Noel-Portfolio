@@ -7,23 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#020617",
-        foreground: "#f8fafc",
+        background: "#FFFFFF",
+        foreground: "#0B0B0C",
         primary: {
-          DEFAULT: "#8b5cf6",
+          DEFAULT: "#FF5C00",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#1e293b",
-          foreground: "#f8fafc",
+          DEFAULT: "#F4F4F5",
+          foreground: "#0B0B0C",
         },
         accent: {
-          DEFAULT: "#c084fc",
+          DEFAULT: "#FF5C00",
           foreground: "#ffffff",
         },
         muted: {
-          DEFAULT: "#334155",
-          foreground: "#94a3b8",
+          DEFAULT: "#F4F4F5",
+          foreground: "#71717A",
         },
       },
       fontFamily: {
