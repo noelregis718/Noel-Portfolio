@@ -4,14 +4,15 @@ A high-performance, premium portfolio website for a **Full-Stack & AI Engineer**
 
 ## ✨ Features
 
-- **Premium Modern UI**: Sleek dark-mode aesthetic with royal purple accents and glassmorphic elements.
-- **Dynamic Hero Section**: Interactive introduction with core social links and role highlights.
-- **Experience Timeline**: Detailed professional journey showcasing internships at AnkFin, Marquee Equity, ZeTheta, RDCC, and Cybtree.
-- **Project Showcase**: Visual cards for **VoteHub** and **Novel AI** with tech stack badges and hover effects.
-- **Categorized Skills**: Categorized into Frontend, Backend, AI/ML, and Cloud using modern iconography.
-- **Achievements Bento Grid**: A visually engaging grid highlighting milestones such as 600+ LeetCode problems solved and HackerRank stars.
-- **Responsive Design**: fully optimized for Desktop, Tablet, and Mobile devices.
-- **Animations**: Fluid experience transitions and micro-interactions powered by **Framer Motion**.
+- **Premium Modern UI**: Sleek dark-mode aesthetic with vibrant orange accents (`#FF5C00`) and refined typography.
+- **Dynamic Hero Section**: Interactive introduction highlighting expertise in **Full-Stack Engineering** and **AI Systems**.
+- **Professional Journey**: Interactive timeline with alternating "glide-in" entrance animations for professional roles at AnkFin, Marquee Equity, ZeTheta, and Cybtree.
+- **Project Showcase**: Horizontal sliding gallery showcasing high-concurrency systems like **VoteHub** and fintech orchestration hubs like **Your Personal CFO**.
+- **Tech Stack Marquee**: Infinite-scrolling marquee of technical expertise including React, Node.js, Python, AWS, and AI integration tools.
+- **Strategic Workflow Technique**: A 5-step engineering roadmap detailing the lifecycle from **Analyze & Architect** to **Deploy & Monitor**, featuring staggered scroll animations.
+- **Advanced Scroll Animations**: Coordinated, high-performance entrance effects powered by **Framer Motion** across all sections.
+- **Responsive CTA Section**: A "converging" contact section with gliding info and form card, featuring functional **Formspree** integration.
+- **Responsive Design**: Fully optimized with a "mobile-first" approach, ensuring a premium experience on all devices.
 
 ## 🛠️ Tech Stack
 
@@ -20,13 +21,14 @@ A high-performance, premium portfolio website for a **Full-Stack & AI Engineer**
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
+- **Contact Form**: [Formspree](https://formspree.io/)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/)
 
 ### Installation
 
@@ -56,13 +58,14 @@ npm run build
 
 The output will be in the `dist/` directory.
 
-## 📄 CV Information
+## 📄 Professional Expertise
 
-The content of this portfolio is based on the professional CV of **Noel Regis**, highlighting his expertise in:
-- Full-Stack Development (Node.js, React, PostgreSQL)
-- AI/ML Engineering (OpenAI, Gemini, RAG, LangChain)
-- Fintech APIs (Stripe, Plaid, Unit Banking)
+The content of this portfolio is based on the professional journey of **Noel Regis**, highlighting his expertise in:
+- **Full-Stack Development**: React 18/19, Node.js, PostgreSQL, Redux Toolkit
+- **AI/ML Engineering**: Advanced RAG Pipelines, Tesseract OCR, LLM Integration
+- **Fintech Orchestration**: Stripe API, Plaid, Unit Banking Infrastructure
+- **System Architecture**: Real-time WebSockets, High-throughput Automated Engines
 
 ---
 
-Built with ❤️ by [Noel Regis](mailto:noel.regis04@gmail.com)
+Built with ❤️ by [Noel Regis](mailto:noelregis718@gmail.com)
