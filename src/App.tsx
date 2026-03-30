@@ -5,7 +5,6 @@ import {
   Terminal,
   Cpu,
   Cloud,
-  Code2,
   ArrowRight,
   Phone,
   MapPin,
@@ -152,16 +151,16 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0], index: n
 );
 
 const ProcessStep = ({ number, title, children }: { number: number, title: string, children: React.ReactNode }) => (
-  <motion.div 
+  <motion.div
     initial={{ x: -100, opacity: 0 }}
     whileInView={{ x: 0, opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
-    transition={{ 
-      duration: 0.8, 
-      delay: (number - 1) * 0.2, 
-      type: "spring", 
-      stiffness: 50, 
-      damping: 12 
+    transition={{
+      duration: 0.8,
+      delay: (number - 1) * 0.2,
+      type: "spring",
+      stiffness: 50,
+      damping: 12
     }}
     className="flex-1 flex flex-col items-center group min-w-[160px]"
   >
@@ -169,7 +168,7 @@ const ProcessStep = ({ number, title, children }: { number: number, title: strin
       {number}
     </div>
     <div className="w-px h-8 bg-black/10 -mt-px -mb-px" />
-    
+
     <div className="w-full bg-[#FAFAFA] border border-black/5 rounded-xl p-3 md:p-4 flex flex-col items-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 shadow-sm relative group">
       <div className="w-full aspect-[4/3] rounded-lg bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] relative overflow-hidden flex items-center justify-center border border-black/5 mb-3 group-hover:bg-[#FF5C00]/5 transition-colors duration-500 p-2">
         <div className="w-full h-full flex items-center justify-center">
@@ -221,7 +220,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
       {/* Background Decor */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[10%] left-[5%] w-[30rem] h-[30rem] bg-primary/10 rounded-full blur-[120px]" />
@@ -235,7 +234,7 @@ const App: React.FC = () => {
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
         className="fixed top-0 w-full z-50 px-6 py-4"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between glass-card !rounded-sm px-6 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between glass-card !border-black/20 !rounded-sm px-6 py-3">
           <div className="text-xl font-bold text-primary tracking-tighter">Noel Regis</div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#hero" className="nav-link">Home</a>
@@ -243,7 +242,7 @@ const App: React.FC = () => {
             <a href="#projects" className="nav-link">Projects</a>
             <a href="#skills" className="nav-link">Skills</a>
           </div>
-          <a href="mailto:noelregis718@gmail.com" className="btn-primary py-2 px-4 text-sm">
+          <a href="mailto:noelregis718@gmail.com" className="btn-primary !bg-black py-2 px-4 text-sm hover:!bg-black/80">
             Contact <ArrowRight size={16} />
           </a>
         </div>
@@ -268,7 +267,7 @@ const App: React.FC = () => {
               <span className="text-primary font-bold">Advanced RAG Pipelines</span>, and <span className="text-primary font-bold">Cloud-Native</span> solutions.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn-primary">
+              <button className="btn-primary !bg-black hover:!bg-black/80">
                 View Projects <ArrowRight size={18} />
               </button>
             </div>
@@ -281,19 +280,12 @@ const App: React.FC = () => {
             className="relative translate-x-[96px]"
           >
 
-            <div className="relative z-10 glass-card p-4 aspect-square max-w-sm mx-auto overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary rounded-xl flex items-center justify-center border border-black/5">
-                <div className="relative">
-                  <Cpu size={120} className="text-primary animate-pulse" />
-                  <div className="absolute inset-0 blur-2xl bg-primary/30 -z-10" />
-                </div>
-              </div>
-              <div className="absolute top-8 right-8 animate-bounce-slow">
-                <Terminal size={40} className="text-accent/50" />
-              </div>
-              <div className="absolute bottom-12 left-10 animate-bounce-slow delay-150">
-                <Code2 size={50} className="text-primary/40" />
-              </div>
+            <div className="relative z-10 aspect-square max-w-sm mx-auto overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src="/3.jpeg"
+                alt="Noel Regis"
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Visual elements */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
@@ -312,7 +304,7 @@ const App: React.FC = () => {
           <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-white">
 
             {/* Experience Item 1 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -337,7 +329,7 @@ const App: React.FC = () => {
             </motion.div>
 
             {/* Experience Item 2 (New) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -361,7 +353,7 @@ const App: React.FC = () => {
             </motion.div>
 
             {/* Experience Item 3 (ZeTheta) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -386,7 +378,7 @@ const App: React.FC = () => {
 
 
             {/* Experience Item 5 (Cybtree) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -414,11 +406,11 @@ const App: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section ref={containerRef} id="projects" className="relative h-[400vh]">
-        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden bg-white/[0.01]">
+      <section ref={containerRef} id="projects" className="relative h-[400vh] mb-0">
+        <div className="sticky top-24 w-full flex flex-col overflow-hidden bg-white/[0.01] pt-18 pb-18">
           <div className="px-6 mb-12">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">Featured <span className="text-[#FF5C00]">Projects</span></h2>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">Featured <span className="text-[#FF5C00]">Projects</span></h2>
             </div>
           </div>
 
@@ -574,10 +566,10 @@ const App: React.FC = () => {
                   I'm always open to new opportunities, collaborations, or just a friendly chat about tech.
                 </p>
               </motion.div>
-              
+
               <div className="space-y-12">
                 <div className="space-y-12">
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -588,7 +580,7 @@ const App: React.FC = () => {
                     <a href="mailto:noelregis718@gmail.com" className="text-2xl md:text-3xl font-bold tracking-tight hover:text-white/80 transition-colors">noelregis718@gmail.com</a>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -599,7 +591,7 @@ const App: React.FC = () => {
                     <a href="tel:7319546900" className="text-2xl md:text-3xl font-bold tracking-tight hover:text-white/80 transition-colors">7319546900</a>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -607,9 +599,9 @@ const App: React.FC = () => {
                     className="flex items-center gap-6 text-white group"
                   >
                     <MapPin size={32} className="text-white/80 group-hover:text-white transition-colors shrink-0" />
-                    <a 
-                      href="https://www.google.com/maps/place/Asansol,+West+Bengal,+India" 
-                      target="_blank" 
+                    <a
+                      href="https://www.google.com/maps/place/Asansol,+West+Bengal,+India"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-2xl md:text-3xl font-bold tracking-tight hover:text-white/80 transition-colors cursor-pointer"
                     >
