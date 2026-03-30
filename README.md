@@ -4,10 +4,11 @@ A high-performance, premium portfolio website for a **Full-Stack & AI Engineer**
 
 ## ✨ Features
 
-- **Premium Modern UI**: Sleek dark-mode aesthetic with vibrant orange accents (`#FF5C00`) and refined typography.
+- **Custom AI Branding**: High-fidelity AI-generated book and computer icon integrated into the browser tab favicon and UI.
+- **Visual Excellence**: Professional-grade hero section featuring a high-resolution personal profile image and borderless design.
 - **Dynamic Hero Section**: Interactive introduction highlighting expertise in **Full-Stack Engineering** and **AI Systems**.
 - **Professional Journey**: Interactive timeline with alternating "glide-in" entrance animations for professional roles at AnkFin, Marquee Equity, ZeTheta, and Cybtree.
-- **Project Showcase**: Horizontal sliding gallery showcasing high-concurrency systems like **VoteHub** and fintech orchestration hubs like **Your Personal CFO**.
+- **Project Showcase**: Horizontal sliding gallery showcasing high-concurrency systems like **VoteHub** and fintech orchestration hubs like **Your Personal CFO**, featuring zero-gap scroll connectivity.
 - **Tech Stack Marquee**: Infinite-scrolling marquee of technical expertise including React, Node.js, Python, AWS, and AI integration tools.
 - **Strategic Workflow Technique**: A 5-step engineering roadmap detailing the lifecycle from **Analyze & Architect** to **Deploy & Monitor**, featuring staggered scroll animations.
 - **Advanced Scroll Animations**: Coordinated, high-performance entrance effects powered by **Framer Motion** across all sections.
