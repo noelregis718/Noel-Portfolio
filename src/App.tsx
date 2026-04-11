@@ -59,22 +59,23 @@ const LeetCode = ({ size = 24 }: { size?: number }) => (
 
 const PROJECTS = [
   {
-    title: "VoteHub",
-    role: "Core Developer",
-    description: "Architected a real-time, high-concurrency polling ecosystem. Leveraged WebSockets for instant data replication and PostgreSQL for transactional integrity during peak voting loads.",
-    tech: ["React", "Node.js", "Socket.io", "PostgreSQL", "Tailwind"],
-    github: "https://github.com/noelregis718/Vote-Hub",
-    demo: "#",
-    icon: <Terminal size={32} />
-  },
-  {
-    title: "Your Personal CFO",
+    title: "Expensify",
     role: "Lead Engineer",
-    description: "Built a sophisticated financial orchestration hub (Smart Tracking) integrating Stripe, Unit, and Plaid. Orchestrated complex money-movement workflows and real-time ledger synchronization.",
+    description: "Smart application enabling real-time expense tracking, automated budgeting, and goal management, secured via Google OAuth for personalized financial growth.",
     tech: ["React 18", "Node.js", "Stripe API", "Unit Banking", "Plaid"],
     github: "https://github.com/noelregis718/Smart-Tracking",
     demo: "#",
-    icon: <Database size={32} />
+    icon: <Database size={32} />,
+    video: "/Expensify.mp4"
+  },
+  {
+    title: "VoteHub Vault",
+    role: "Core Developer",
+    description: "VoteHub is a secure ecosystem featuring premium eAuctions, encrypted polls, transparent data vaults, and viral sharing threads for decentralized governance.",
+    tech: ["React", "Node.js", "Socket.io", "PostgreSQL", "Tailwind"],
+    github: "https://github.com/noelregis718/Vote-Hub",
+    demo: "https://vote-hub-gamma.vercel.app/",
+    video: "/5.mp4"
   },
   {
     title: "Website Scrapper",
@@ -103,49 +104,52 @@ const TECH_STACK = [
   "supabase", "prisma", "java", "c", "cpp", "vscode", "github", "linux", "vercel", "postman"
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0], index: number }) => (
+const ProjectCard = ({ project }: { project: typeof PROJECTS[0] }) => (
   <motion.div
-    className="shrink-0 w-[450px] md:w-[600px] aspect-[4/3] md:aspect-video glass-card overflow-hidden group relative flex flex-col"
+    className="shrink-0 w-[450px] md:w-[600px] flex flex-col group relative"
   >
-    <div className="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 select-none pointer-events-none">
-      0{index + 1}
+    {/* Media Section (Contained) */}
+    <div className="relative aspect-video overflow-hidden glass-card !border-black/5 !shadow-xl">
+      {project.video && (
+        <video
+          src={project.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      )}
     </div>
 
-    <div className="p-8 md:p-12 flex flex-col h-full justify-between relative z-10">
-      <div>
-        <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-8 border border-white/20 group-hover:scale-110 transition-transform duration-500">
-          {project.icon}
+    {/* Content Section (Uncontained) */}
+    <div className="py-8 flex flex-col">
+      <div className="flex justify-between items-start mb-6">
+        <div>
+          <h3 className="text-3xl font-extrabold text-black leading-none">{project.title}</h3>
         </div>
-        <h3 className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tighter uppercase">{project.title}</h3>
-        <p className="text-[#FF5C00] font-bold text-lg mb-6 tracking-wide uppercase">{project.role}</p>
-        <p className="text-white text-lg leading-relaxed max-w-md">
-          {project.description}
-        </p>
-      </div>
-
-      <div className="mt-auto">
-        <div className="flex flex-wrap gap-2 mb-8">
-          {project.tech.map(t => (
-            <span key={t} className="px-3 py-1 bg-white/10 border border-white/10 rounded-full text-xs font-mono text-white/70 uppercase tracking-widest">{t}</span>
-          ))}
-        </div>
-        <div className="flex gap-4">
+        
+        <div className="flex items-center gap-3">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-[#FF5C00] hover:text-white transition-all transform active:scale-95"
+            className="flex items-center justify-center w-10 h-10 border border-black/10 rounded-sm text-black hover:bg-black/5 transition-all"
           >
-            <Github size={18} /> Source Code
+            <Github size={18} />
           </a>
           <a
             href={project.demo}
-            className="flex items-center justify-center w-12 h-12 border border-white/20 rounded-full text-white hover:bg-white/10 transition-all"
+            className="flex items-center justify-center w-10 h-10 border border-black/10 rounded-sm text-black hover:bg-black/5 transition-all"
           >
-            <ExternalLink size={20} />
+            <ExternalLink size={18} />
           </a>
         </div>
       </div>
+      
+      <p className="text-black/70 text-lg leading-relaxed max-w-2xl font-medium">
+        {project.description}
+      </p>
     </div>
   </motion.div>
 );
@@ -418,8 +422,8 @@ const App: React.FC = () => {
             style={{ x }}
             className="flex gap-12 px-6 md:px-[calc((100vw-80rem)/2)] items-start"
           >
-            {PROJECTS.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.title} project={project} />
             ))}
           </motion.div>
         </div>
