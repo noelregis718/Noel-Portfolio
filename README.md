@@ -67,10 +67,6 @@ The content of this portfolio is based on the professional journey of **Noel Reg
 - **Fintech Orchestration**: Stripe API, Plaid, Unit Banking Infrastructure
 - **System Architecture**: Real-time WebSockets, High-throughput Automated Engines
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 Built with ❤️ by [Noel Regis](mailto:noelregis718@gmail.com)
