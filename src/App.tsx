@@ -3,7 +3,6 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import {
   Mail,
   Terminal,
-  Cpu,
   Cloud,
   ArrowRight,
   Phone,
@@ -78,22 +77,30 @@ const PROJECTS = [
     video: "/5.mp4"
   },
   {
-    title: "Website Scrapper",
-    role: "Automation Architect",
-    description: "Developed a high-throughput automated data extraction engine. Engineered robust anti-detection mechanisms and parallel processing pipelines for enterprise-scale scraping operations.",
-    tech: ["Node.js", "Puppeteer", "AI Analytics", "Redis", "Docker"],
-    github: "https://github.com/noelregis718/Website-Scrapper",
-    demo: "#",
-    icon: <Zap size={32} />
+    title: "Nomad Tax",
+    role: "Core Developer",
+    description: "Nomad-Tax is a high-performance intelligence platform for digital nomads, tracking physical presence across borders to ensure tax residency and visa compliance.",
+    tech: ["React 19", "Node.js", "Prisma", "PostgreSQL", "Framer Motion"],
+    github: "https://github.com/noelregis718/Nomad-Tax",
+    demo: "https://nomad-tax.vercel.app/"
   },
   {
-    title: "Social Media Alchemist",
-    role: "AI Engineer",
-    description: "Engineered an AI-driven social orchestration platform. Leveraged LLMs for automated high-fidelity content generation and Selenium for cross-platform publishing automation.",
-    tech: ["Python", "OpenAI API", "Selenium", "Flask", "PostgreSQL"],
-    github: "https://github.com/noelregis718/Social-Media-Alchemist",
+    title: "ProFlow",
+    role: "Core Developer",
+    description: "ProFlow is a productivity extension featuring universal night mode, color picking, session-based Pomodoro timing, and automated high-performance page scrolling utility.",
+    tech: ["Browser APIs", "JavaScript", "CSS3", "Chrome DevTools", "Productivity"],
+    github: "https://github.com/noelregis718/ProFlow",
     demo: "#",
-    icon: <Cpu size={32} />
+    video: "/7.mp4"
+  },
+  {
+    title: "Project Scratchpad",
+    role: "Core Developer",
+    description: "A VS Code extension providing integrated public and private Markdown scratchpads for capturing project notes, tasks, and code snippets.",
+    tech: ["VS Code API", "TypeScript", "Markdown", "Node.js", "FS"],
+    github: "https://github.com/noelregis718/Project-Scratchpad",
+    demo: "#",
+    video: "/6.mp4"
   }
 ];
 
@@ -138,12 +145,14 @@ const ProjectCard = ({ project }: { project: typeof PROJECTS[0] }) => (
           >
             <Github size={18} />
           </a>
-          <a
-            href={project.demo}
-            className="flex items-center justify-center w-10 h-10 border border-black/10 rounded-sm text-black hover:bg-black/5 transition-all"
-          >
-            <ExternalLink size={18} />
-          </a>
+          {project.demo !== "#" && (
+            <a
+              href={project.demo}
+              className="flex items-center justify-center w-10 h-10 border border-black/10 rounded-sm text-black hover:bg-black/5 transition-all"
+            >
+              <ExternalLink size={18} />
+            </a>
+          )}
         </div>
       </div>
       
@@ -194,7 +203,7 @@ const App: React.FC = () => {
     offset: ["start start", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -238,7 +247,7 @@ const App: React.FC = () => {
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
         className="fixed top-0 w-full z-50 px-6 py-4"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between glass-card !border-black/20 !rounded-sm px-6 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between glass-card !border-black/20 !rounded-xl px-6 py-4">
           <div className="text-xl font-bold text-primary tracking-tighter">Noel Regis</div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#hero" className="nav-link">Home</a>
@@ -271,9 +280,9 @@ const App: React.FC = () => {
               <span className="text-primary font-bold">Advanced RAG Pipelines</span>, and <span className="text-primary font-bold">Cloud-Native</span> solutions.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn-primary !bg-black hover:!bg-black/80">
+              <a href="#projects" className="btn-primary !bg-black hover:!bg-black/80 inline-flex items-center gap-2 !rounded-xl">
                 View Projects <ArrowRight size={18} />
-              </button>
+              </a>
             </div>
           </motion.div>
 
@@ -410,7 +419,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section ref={containerRef} id="projects" className="relative h-[400vh] mb-0">
+      <section ref={containerRef} id="projects" className="relative h-[500vh] mb-0">
         <div className="sticky top-24 w-full flex flex-col overflow-hidden bg-white/[0.01] pt-18 pb-18">
           <div className="px-6 mb-12">
             <div className="max-w-7xl mx-auto">
