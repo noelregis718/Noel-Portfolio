@@ -77,12 +77,13 @@ const PROJECTS = [
     video: "/5.mp4"
   },
   {
-    title: "Nomad Tax",
+    title: "Website Scraper",
     role: "Core Developer",
-    description: "Nomad-Tax is a high-performance intelligence platform for digital nomads, tracking physical presence across borders to ensure tax residency and visa compliance.",
-    tech: ["React 19", "Node.js", "Prisma", "PostgreSQL", "Framer Motion"],
-    github: "https://github.com/noelregis718/Nomad-Tax",
-    demo: "https://nomad-tax.vercel.app/"
+    description: "A high-performance application designed to scrape and extract structured data from complex websites at scale, enabling automated market research and high-fidelity data intelligence.",
+    tech: ["Python", "Selenium", "PostgreSQL", "React", "Node.js"],
+    github: "https://github.com/noelregis718/PocketFM",
+    demo: "#",
+    video: "/79.mp4"
   },
   {
     title: "ProFlow",
@@ -100,7 +101,7 @@ const PROJECTS = [
     tech: ["VS Code API", "TypeScript", "Markdown", "Node.js", "FS"],
     github: "https://github.com/noelregis718/Project-Scratchpad",
     demo: "#",
-    video: "/6.mp4"
+    video: "/78.mp4"
   }
 ];
 
@@ -227,8 +228,9 @@ const App: React.FC = () => {
       } else {
         setFormStatus('error');
       }
-    } catch (error) {
+    } catch (err) {
       setFormStatus('error');
+      console.error(err);
     }
   };
 
@@ -439,7 +441,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Tech Stack Marquee Section */}
-      <section className="py-16 bg-[#0A0A0A] overflow-hidden">
+      <section id="skills" className="py-16 bg-[#0A0A0A] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight -ml-2">
             My Arsenal. <span className="text-white/60">The Best Tools.</span>
