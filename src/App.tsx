@@ -257,7 +257,7 @@ const App: React.FC = () => {
             <a href="#projects" className="nav-link">Projects</a>
             <a href="#skills" className="nav-link">Skills</a>
           </div>
-          <a href="mailto:noelregis718@gmail.com" className="btn-primary !bg-black py-2 px-4 text-sm hover:!bg-black/80">
+          <a href="#contact" className="btn-primary !bg-black py-2 px-4 text-sm hover:!bg-black/80">
             Contact <ArrowRight size={16} />
           </a>
         </div>
