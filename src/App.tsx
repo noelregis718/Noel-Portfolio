@@ -63,7 +63,7 @@ const PROJECTS = [
     description: "Smart application enabling real-time expense tracking, automated budgeting, and goal management, secured via Google OAuth for personalized financial growth.",
     tech: ["React 18", "Node.js", "Stripe API", "Unit Banking", "Plaid"],
     github: "https://github.com/noelregis718/Smart-Tracking",
-    demo: "#",
+    demo: "https://smart-tracking-2kvr.vercel.app/",
     icon: <Database size={32} />,
     video: "/Expensify.mp4"
   },
