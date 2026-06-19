@@ -114,10 +114,10 @@ const TECH_STACK = [
 
 const ProjectCard = ({ project }: { project: typeof PROJECTS[0] }) => (
   <motion.div
-    className="shrink-0 w-[450px] md:w-[600px] flex flex-col group relative"
+    className="shrink-0 w-[450px] md:w-[600px] h-[70vh] max-h-[550px] min-h-[400px] flex flex-col group relative"
   >
     {/* Media Section (Contained) */}
-    <div className="relative aspect-video overflow-hidden glass-card !border-black/5 !shadow-xl">
+    <div className="relative flex-1 w-full overflow-hidden glass-card !border-black/5 !shadow-xl">
       {project.video && (
         <video
           src={project.video}
@@ -125,13 +125,13 @@ const ProjectCard = ({ project }: { project: typeof PROJECTS[0] }) => (
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       )}
     </div>
 
     {/* Content Section (Uncontained) */}
-    <div className="py-8 flex flex-col">
+    <div className="py-6 shrink-0 flex flex-col">
       <div className="flex justify-between items-start mb-6">
         <div>
           <h3 className="text-3xl font-extrabold text-black leading-none">{project.title}</h3>
@@ -204,7 +204,7 @@ const App: React.FC = () => {
     offset: ["start start", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["calc(0% - 0vw)", "calc(-100% + 100vw)"]);
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -422,8 +422,8 @@ const App: React.FC = () => {
 
       {/* Projects Section */}
       <section ref={containerRef} id="projects" className="relative h-[500vh] mb-0">
-        <div className="sticky top-24 w-full flex flex-col overflow-hidden bg-white/[0.01] pt-18 pb-18">
-          <div className="px-6 mb-12">
+        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden bg-white/[0.01] py-12">
+          <div className="px-6 mb-8 md:mb-12 mt-8 md:mt-0">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">Featured <span className="text-[#FF5C00]">Projects</span></h2>
             </div>
@@ -431,7 +431,7 @@ const App: React.FC = () => {
 
           <motion.div
             style={{ x }}
-            className="flex gap-12 px-6 md:px-[calc((100vw-80rem)/2)] items-start"
+            className="flex w-max gap-12 px-6 md:px-[calc((100vw-80rem)/2)] items-center"
           >
             {PROJECTS.map((project) => (
               <ProjectCard key={project.title} project={project} />
